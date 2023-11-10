@@ -44,11 +44,11 @@ function insertItem(item, index){
     <td>${item.desc}</td>
     <td>R$ ${item.valor}</td>
     <td class="columnTipo">${item.tipo === "Entrada"
-        ? 'subiu'
-        : 'desceu'
+        ? '<i style="color: green;" class="fa-solid fa-arrow-turn-up"></i>'
+        : '<i style="color: red;" class="fa-solid fa-arrow-turn-down"></i>'
     }</td>
     <td class="columnAcao">
-        <button onclick="deleteItem(${index})">LX</button>
+        <button id="animation" onclick="deleteItem(${index})"><i class="fa-solid fa-trash"></i></button>
     </td>
     `
     tbody.appendChild(tr)
@@ -91,3 +91,13 @@ const getItensBD = () => JSON.parse(localStorage.getItem("db_itens"))?? []
 const setItensBD = () => localStorage.setItem("db_itens", JSON.stringify(itens))
 
 loadItens()
+
+const animation = document.querySelectorAll('#animation');
+animation.forEach(animation => {
+    animation.addEventListener('mouseover', () =>{
+        animation.classList.add('fa-bounce')
+    })
+    animation.addEventListener('mouseout', () => {
+        animation.classList.remove('fa-bounce')
+    })
+})

@@ -4,54 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Financeiro</title>
+
+    <script src="https://kit.fontawesome.com/022be58334.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div>
-            <img src="" alt="">
+    <header id="header">
+        <div class="fundo">
         </div>
-        <div>
-            <p>BEM-VINDO</p>
-            <p>Esse é seu controle financeiro</p>
+        <div class="conteudo">
+            <h1 class="titulo">Bem Vindo</h1>
+
+            <div class="divisaoTexto"></div>
+
+            <p class="subtitulo">Esse é seu controle financeiro</p>
         </div>
     </header>
-    <main>
-        <div class="resumo">
-            Entradas: R$
-            <span class="entradas">0.00</span>
-        </div>
-        <div>
-            Saídas: R$
-            <span class="saidas">0.00</span>
-        </div>
-        <div>
-            Total: R$
-            <span class="total">0.00</span>
-        </div>
-        <div>
-            <div class="novoItem">
-                <div class="divDesc">
-                    <label for="desc">Descrição</label>
-                    <input type="text" id="desc">
+    <main id="main">
+
+        
+
+        <div class="conteiner">
+            <div class="resumo">
+                <div>
+                    <span class="texto">Entradas: R$</span>
+                    <span class="entradas">0.00</span>
                 </div>
-                <div class="divValor">
-                    <label for="valor">Valor</label>
-                    <input type="number" id="valor" />
+
+                <div class="divisaoVertical"></div>
+
+                <div>
+                    <span class="texto">Saídas: R$</span>
+                    <span class="saidas">0.00</span>
                 </div>
-                <div class="divTipo">
-                    <label for="tipo">Tipo</label>
-                    <select id="tipo">
-                        <option>Entrada</option>
-                        <option>Saída</option>
-                    </select>
+
+                <div class="divisaoVertical"></div>
+
+                <div>
+                    <span class="texto">Total: R$</span>
+                    <span class="total">0.00</span>
                 </div>
-                <button id="btnNovo">Incluir</button>
+                
             </div>
+
+            <div class="divisaoTotalHorisontal"></div>
+
+            <div class="novoItem">
+
+                <div class="novoItemIn">
+
+                    <div class="divDesc Infor">
+                        <label for="desc">Descrição</label>
+                        <input placeholder="Insira aqui" type="text" id="desc">
+                    </div>
+
+                    <div class="divisaoVertical"></div>
+
+                    <div class="divValor Infor">
+                        <label for="valor">Valor</label>
+                        <input placeholder="Insira aqui" type="number" id="valor" />
+                    </div>
+
+                    <div class="divisaoVertical"></div>
+
+                    <div class="divTipo Infor">
+                        <label for="tipo">Tipo</label>
+                        <select id="tipo">
+                            <option>Entrada</option>
+                            <option>Saída</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <button id="btnNovo">
+                    <span class="textoHover">Incluir</span>
+                    <i class="imagemHover fa-sharp fa-regular fa-circle-check fa-beat"></i>                </button>
+            
+            </div>
+
             <div class="divTabela">
                 <table>
                     <thead>
                         <tr>
-                            <th>Descrição</th>
+                            <th>Nome</th>
                             <th class="columnValor">Valor</th>
                             <th class="columnTipo">Tipo</th>
                             <th class="columnAcao"></th>
@@ -60,7 +97,19 @@
                     <tbody></tbody>
                 </table>
             </div>
+
+            <div class="piramides">
+                <div class="piramide piramideL">
+                    <img src="img/piramideFundo.png" alt="">
+                </div>
+                <div class="piramide piramideR">
+                    <img src="img/piramideFundo.png" alt="">
+                </div>
+            </div>
         </div>
+
+        
+
     </main>
     <script src="main.js"></script>
 </body>
