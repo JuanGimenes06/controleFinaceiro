@@ -48,10 +48,20 @@ function insertItem(item, index){
         : '<i style="color: red;" class="fa-solid fa-arrow-turn-down"></i>'
     }</td>
     <td class="columnAcao">
-        <button id="animation" onclick="deleteItem(${index})"><i class="fa-solid fa-trash"></i></button>
+        <button id="animation" onclick="deleteItem(${index})"><i style="color: white; background-color: black;"class="fa-lg fa-solid fa-xmark"></i></button>
     </td>
     `
     tbody.appendChild(tr)
+
+    const animation = document.querySelectorAll('#animation');
+    animation.forEach(animation => {
+    animation.addEventListener('mouseover', () =>{
+        animation.classList.add('fa-beat-fade')
+    })
+    animation.addEventListener('mouseout', () => {
+        animation.classList.remove('fa-beat-fade')
+    })
+})
 }
 
 function loadItens(){
@@ -92,12 +102,3 @@ const setItensBD = () => localStorage.setItem("db_itens", JSON.stringify(itens))
 
 loadItens()
 
-const animation = document.querySelectorAll('#animation');
-animation.forEach(animation => {
-    animation.addEventListener('mouseover', () =>{
-        animation.classList.add('fa-bounce')
-    })
-    animation.addEventListener('mouseout', () => {
-        animation.classList.remove('fa-bounce')
-    })
-})
